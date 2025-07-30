@@ -27,7 +27,6 @@ public class KafkaConsumerConfig {
 
 	@Bean
 	public ConsumerFactory<String, UsuarioDTO> consumerFactory() {
-
 		var configs = new HashMap<String, Object>();
 
 		configs.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.server());
@@ -46,6 +45,9 @@ public class KafkaConsumerConfig {
 		var factory = new ConcurrentKafkaListenerContainerFactory<String, UsuarioDTO>();
 
 		factory.setConsumerFactory(consumerFactory());
+
+		// Define concorrência de 5 threads para consumir mensagens em paralelo
+		factory.setConcurrency(5);
 
 		return factory;
 	}
