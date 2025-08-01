@@ -34,3 +34,6 @@ private KafkaTemplate<String, UsuarioDTO> kafkaTemplate;
 public void enviarMensagem(UsuarioDTO usuario) {
     kafkaTemplate.send("usuarios", usuario.getCpf(), usuario);
 }
+```
+
+## 🛠️ Há na pasta resources o docker compose, para executar o Kafka e o RedPanda localmente. RedPanda é uma interface gráfica para manipulçao dos tópicos. Há também outro arquivo, de operações dentro do container para manipular os tópicos.
