@@ -13,7 +13,7 @@ public class KafkaPropertiesConfig {
 	// Sem este Bean NOMEADO teria que usar o @Value ou usar EL mapeando diretamente
 	// o properties.
 	// O que faria com que o proposito da validacao com @Validated perdesse total
-	// sentido, e subisse algum valor quabrado ou invalido
+	// sentido, e subisse algum valor quebrado ou invalido
 
 	@Bean(name = "kafkaProperties")
 	public KafkaProperties kafkaProperties(KafkaProperties props) {

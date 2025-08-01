@@ -16,6 +16,5 @@ public class UsuarioListenerService {
 	public void consumir(ConsumerRecord<String, UsuarioDTO> record) {
 		log.info("Usuário: {} | Chave: {} | Partição: {} | Offset: {}", record.value(), record.key(),
 				record.partition(), record.offset());
-
 	}
 }
